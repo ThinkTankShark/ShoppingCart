@@ -8,6 +8,7 @@ gem 'thin'
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'sass-rails'
 
 group :development, :test do
   gem 'pry-rails'
