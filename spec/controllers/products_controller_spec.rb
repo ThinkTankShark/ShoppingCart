@@ -43,6 +43,7 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "#update" do
+    pending
     # let!(:product) { Product.create(title: "My title", description: "A valid title", price: 5) }
     # context 'on valid params' do
     #   let(:params) {{product: {title: product.title, description: "new description", id: 1}}}
