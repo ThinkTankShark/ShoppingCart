@@ -1,0 +1,15 @@
+%p
+  Title:
+  = @product.title
+
+%p
+  Description:
+  = @product.description
+
+%p
+  Price:
+  = @product.price
+
+= link_to 'Edit', edit_product_path
+= link_to 'Delete Product', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'View All Products', products_path
