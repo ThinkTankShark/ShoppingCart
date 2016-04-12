@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
+    p params
     if @product.save
       redirect_to @product
     else
