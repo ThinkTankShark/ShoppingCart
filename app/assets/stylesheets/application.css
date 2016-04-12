@@ -18,38 +18,3 @@
   text-align: center;
   color: blue;
 }
-
-#products_heading {
-  text-align: center;
-  font-size: 2.5em;
-}
-
-.shop_link {
-  text-align: center;
-  font-size: 2em;
-  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-}
-
-#add_new_product {
-  text-align: center;
-  color: green;
-  font-family: Courier;
-}
-
-#product_title {
-  font-size: 1.5em;
-  border-bottom: 1px solid black;
-}
-
-#product_desc {
-
-}
-
-#product_price {
-
-}
-
-.img_small {
-  padding: 10px;
-  border: 1px solid blue;
-}
