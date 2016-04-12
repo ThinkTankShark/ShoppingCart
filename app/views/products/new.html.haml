@@ -1,16 +1,5 @@
-= form_for @product do |f|
+%h3
+  Add a product
 
-  %p
-    = f.label :title
-    = f.text_field :title
-  %p
-    = f.label :price
-    = f.text_field :price
-
-  %p
-    = f.label :description
-    = f.text_field :description
-
-  %p
-    = f.submit
+= render 'products/product'
 
