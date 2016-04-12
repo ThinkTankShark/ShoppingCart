@@ -1,2 +1,10 @@
-%h1 Products#index
-%p Find me in app/views/products/index.html.haml
+%h1
+  Products
+
+%p
+  - @products.each do |product|
+    = link_to product.title, product_path(product)
+
+
+%p
+  = link_to 'Add New Product', new_product_path
