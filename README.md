@@ -1,10 +1,9 @@
 ## Client Stories:
 ___
-* The client can add a product to the store.
-* The client can edit a product.
-* The client can view all products or an individual product.
-* The client can delete a product.
-* The client can navigate to the site from each page.
+* Upon authentication, the admin can add, edit, delete and view a product from the store, which includes inventory level.
+
+* A shopper can navigate to the site from each page.
+
 
 ## Schema Screenshot:
 
