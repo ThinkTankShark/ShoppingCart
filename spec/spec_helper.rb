@@ -7,4 +7,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  config.alias_example_group_to :feature
+
 end
+
