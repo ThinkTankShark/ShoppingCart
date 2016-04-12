@@ -3,8 +3,11 @@
 
 %p.shop_link
   - @products.each do |product|
-    %div.img_small
-    = link_to product.title, product_path(product)
+    %div#single_product
+      %div.img_small
+        %img(src="#{product.img_url}")
+      = link_to product.title, product_path(product)
+
 
 
 %p#add_new_product
