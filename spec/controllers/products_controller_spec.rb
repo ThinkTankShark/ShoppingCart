@@ -2,13 +2,15 @@ require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller do
 
-  before do
-    @all_products = 3.times.map do
-      Product.create!(title: "Title", description: "Desc", price: rand(1..100))
-  end
-  end
+    before do
+      @all_products = 3.times.map do
+        Product.create!(title: "Title", description: "Desc", price: rand(1..100))
+      end
+    end
+
 
   describe "#index" do
+
     it "should load all products" do
       get :index
       expect(assigns[:products]).to eq @all_products
@@ -38,23 +40,28 @@ RSpec.describe ProductsController, type: :controller do
         expect(response).to have_rendered(:new)
       end
     end
-
-  end
-
-  describe "#show" do
-
-  end
-
-  describe "#new" do
-
   end
 
   describe "#update" do
-
+    # let!(:product) { Product.create(title: "My title", description: "A valid title", price: 5) }
+    # context 'on valid params' do
+    #   let(:params) {{product: {title: product.title, description: "new description", id: 1}}}
+    #   it 'responds with a status of 302' do
+    #     patch :update, params
+    #     expect(response.status).to eq(302)
+    #   end
+    # end
   end
 
-  describe "#create" do
-
+  describe "#destroy" do
+    let!(:product) { Product.create(title: "My title", description: "A valid title", price: 5) }
+    it 'responds with a status of 302' do
+      delete :destroy, id: product.id
+      expect(response.status).to eq(302)
+    end
+    it 'decrements the products in the database by 1' do
+      expect{delete :destroy, id: product.id}.to change{Product.count}.by(-1)
+    end
   end
 
 end
