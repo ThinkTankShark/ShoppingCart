@@ -27,8 +27,20 @@
   border-radius: 5%;
 }
 
+.edit_single_product {
+  text-align: center;
+}
+
 .form_group {
 
   margin: auto;
+}
+
+.alert .alert-success {
+  background-color: green;
+}
+
+.alert .alert-danger {
+  background-color: red;
 }
 
