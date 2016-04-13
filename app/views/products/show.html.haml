@@ -4,6 +4,11 @@
 %br
 %br
 
+%div.flash
+  -flash.each do |message_type, message|
+    %div.alert{ :class => "alert-#{message_type}"}
+      =message
+
 .col-sm-4.col-lg-4.col-md-4
   .thumbnail
     %img{:src => "#{@product.img_url}"}
