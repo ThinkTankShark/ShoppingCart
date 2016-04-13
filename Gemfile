@@ -9,6 +9,7 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'sass-rails'
+gem 'bootstrap-sass', '~> 2.3.1.0'
 
 group :development, :test do
   gem 'pry-rails'
@@ -20,5 +21,6 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'faker'
 end
 
