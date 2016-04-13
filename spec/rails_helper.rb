@@ -4,6 +4,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'bootstrap'
+require 'faker'
 
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
