@@ -9,6 +9,6 @@
   %body
     %div.flash
       -flash.each do |message_type, message|
-        %div.alert-alert-"#{message_type}"
+        %div.alert{ :class => "alert-#{message_type}"}
         = message
     = yield
