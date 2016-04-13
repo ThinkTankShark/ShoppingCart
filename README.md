@@ -14,5 +14,5 @@ ___
 * rails 4.2.6
 
 ## Deployment details and link
-[Ye Olde Rails Shoppe](https://agile-headland-74364.herokuapp.com)
+[Ye Olde Rails Shoppe](https://cryptic-inlet-68243.herokuapp.com)
 

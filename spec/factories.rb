@@ -4,6 +4,6 @@ FactoryGirl.define do
     price Faker::Commerce.price
     description Faker::Hipster.sentence
     img_url Faker::Avatar.image("shop-image", "300x300")
-    quantity rand(1..1000)
+    quantity ([1..1000].sample)
   end
 end
