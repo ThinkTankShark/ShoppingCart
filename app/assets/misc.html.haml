@@ -1,0 +1,50 @@
+
+
+%p#product_title
+  Title:
+  = @product.title
+
+%div.img_small
+  %img(src="#{@product.img_url}")
+
+%p#product_desc
+  Description:
+  = @product.description
+
+%p#product_price
+  Price:
+  = number_to_currency(@product.price)
+
+%p#product_quantity
+  Quantity:
+  = @product_quantity
+
+= link_to 'Edit', edit_product_path
+%br
+= link_to 'Delete Product', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }
+%br
+= link_to 'View All Products', products_path
+
+= form_for @product do |f|
+
+  %p
+    = f.label :title
+    = f.text_field :title
+  %p
+    = f.label :price
+    = f.text_field :price
+
+  %p
+    = f.label :description
+    = f.text_field :description
+
+  %p
+    = f.label :Image_url
+    = f.text_field :img_url
+
+  %p
+  = f.label :quantity
+  = f.text_field :quantity
+
+  %p
+    = f.submit

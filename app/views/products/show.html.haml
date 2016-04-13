@@ -1,26 +1,14 @@
+.col-sm-4.col-lg-4.col-md-4
+  .thumbnail
+    %img{:src => "#{@product.img_url}"}
+      .caption
+        %h4.pull-right= number_to_currency(@product.price)
+        %h4
+          = @product.title
+        %p= @product.description
 
+  = link_to 'Edit Product   |', edit_product_path
 
-%p#product_title
-  Title:
-  = @product.title
+  = link_to 'Delete Product   |', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }
 
-%div.img_small
-  %img(src="#{@product.img_url}")
-
-%p#product_desc
-  Description:
-  = @product.description
-
-%p#product_price
-  Price:
-  = number_to_currency(@product.price)
-
-%p#product_quantity
-  Quantity:
-  = @product_quantity
-
-= link_to 'Edit', edit_product_path
-%br
-= link_to 'Delete Product', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }
-%br
-= link_to 'View All Products', products_path
+  = link_to 'View All Products', products_path

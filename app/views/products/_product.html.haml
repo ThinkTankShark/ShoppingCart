@@ -1,25 +1,27 @@
-= form_for @product do |f|
+%div.form-style
+  = form_for @product do |f|
 
-  %p
-    = f.label :title
-    = f.text_field :title
-  %p
-    = f.label :price
-    = f.text_field :price
+    .form-group
+      = f.label :title
+      #exampleInputEmail1
+        = f.text_field :title
+    .form-group
+      = f.label :price
+      #exampleInputEmail1
+        = f.text_field :price
+    .form-group
+      = f.label :description
+      #exampleInputEmail1
+        = f.text_field :description
+    .form-group
+      = f.label :Image_url
+      #exampleInputEmail1
+        = f.text_field :img_url
+    .form-group
+      = f.label :quantity
+      #exampleInputEmail1
+        = f.text_field :quantity
 
-  %p
-    = f.label :description
-    = f.text_field :description
-
-  %p
-    = f.label :Image_url
-    = f.text_field :img_url
-
-  %p
-  = f.label :quantity
-  = f.text_field :quantity
-
-  %p
-    = f.submit
-
+    %button.btn.btn-default
+      = f.submit
 
