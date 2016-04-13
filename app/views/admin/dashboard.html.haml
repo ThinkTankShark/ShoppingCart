@@ -1,3 +1,19 @@
-%h1 Admin#dashboard
-%p Find me in app/views/admin/dashboard.html.haml
-=@foo
+%h1 Inventory Management
+%table
+  %tr
+    %th Product ID
+    %th Product Title
+    %th Product Quantity
+    %th Edit
+    %th Delete
+
+
+  - @products.each do |product|
+    %tr
+      %td= product.id
+      %td= link_to product.title, product_path(product.id)
+      %td= product.quantity
+      %td= link_to 'Edit', edit_product_path(product.id)
+      %td= link_to 'Delete', product_path(product.id), method: :delete
+
+
