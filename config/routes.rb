@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'welcome#index'
-
-  get 'products/index'
-
-  get 'products/index'
-
-  get 'welcome/index'
+  root :to => 'products#index'
 
   get 'admin' => 'admin#dashboard'
 

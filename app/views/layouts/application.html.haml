@@ -22,23 +22,19 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Ye Old Rails Shoppe
+          %a.navbar-brand{:href => "/"} Ye Old Rails Shoppe
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => "#"} About
+              %a{:href => "/products"} View All Products
             %li
-              %a{:href => "#"} Services
-            %li
-              %a{:href => "#"} Contact
+              %a{:href => "/admin"} Admin Login
         / /.navbar-collapse
       / /.container
 
-    %div.flash
-      -flash.each do |message_type, message|
-        %div.alert{ :class => "alert-#{message_type}"}
-        = message
+
+
     = yield
 
 
