@@ -22,7 +22,7 @@
         %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
           %meta{:content => "", :name => "description"}
             %meta{:content => "", :name => "author"}
-              %title Shop Homepage - Start Bootstrap Template
+              %title Ye Old Rails Shoppe
               / Bootstrap Core CSS
               %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}
                 / Custom CSS
@@ -43,7 +43,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Start Bootstrap
+          %a.navbar-brand{:href => "#"} Ye Old Rails Shoppe
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
@@ -55,126 +55,6 @@
               %a{:href => "#"} Contact
         / /.navbar-collapse
       / /.container
-    / Page Content
-    .container
-      .row
-        .col-md-3
-          %p.lead Shop Name
-          .list-group
-            %a.list-group-item{:href => "#"} Category 1
-            %a.list-group-item{:href => "#"} Category 2
-            %a.list-group-item{:href => "#"} Category 3
-        .col-md-9
-          .row.carousel-holder
-            .col-md-12
-              #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
-                %ol.carousel-indicators
-                  %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-                  %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-                  %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
-                .carousel-inner
-                  .item.active
-                    %img.slide-image{:alt => "", :src => "http://placehold.it/800x300"}
-                  .item
-                    %img.slide-image{:alt => "", :src => "http://placehold.it/800x300"}
-                  .item
-                    %img.slide-image{:alt => "", :src => "http://placehold.it/800x300"}
-                %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic"}
-                  %span.glyphicon.glyphicon-chevron-left
-                %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic"}
-                  %span.glyphicon.glyphicon-chevron-right
-          .row
-            .col-sm-4.col-lg-4.col-md-4
-              .thumbnail
-                %img{:alt => "", :src => "http://placehold.it/320x150"}
-                  .caption
-                    %h4.pull-right $24.99
-                    %h4
-                      %a{:href => "#"} First Product
-                    %p
-                      See more snippets like this online store item at
-                      = succeed "." do
-                        %a{:href => "http://www.bootsnipp.com", :target => "_blank"} Bootsnipp - http://bootsnipp.com
-                  .ratings
-                    %p.pull-right 15 reviews
-                    %p
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-            .col-sm-4.col-lg-4.col-md-4
-              .thumbnail
-                %img{:alt => "", :src => "http://placehold.it/320x150"}
-                  .caption
-                    %h4.pull-right $64.99
-                    %h4
-                      %a{:href => "#"} Second Product
-                    %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  .ratings
-                    %p.pull-right 12 reviews
-                    %p
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star-empty
-            .col-sm-4.col-lg-4.col-md-4
-              .thumbnail
-                %img{:alt => "", :src => "http://placehold.it/320x150"}
-                  .caption
-                    %h4.pull-right $74.99
-                    %h4
-                      %a{:href => "#"} Third Product
-                    %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  .ratings
-                    %p.pull-right 31 reviews
-                    %p
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star-empty
-            .col-sm-4.col-lg-4.col-md-4
-              .thumbnail
-                %img{:alt => "", :src => "http://placehold.it/320x150"}
-                  .caption
-                    %h4.pull-right $84.99
-                    %h4
-                      %a{:href => "#"} Fourth Product
-                    %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  .ratings
-                    %p.pull-right 6 reviews
-                    %p
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star-empty
-                      %span.glyphicon.glyphicon-star-empty
-            .col-sm-4.col-lg-4.col-md-4
-              .thumbnail
-                %img{:alt => "", :src => "http://placehold.it/320x150"}
-                  .caption
-                    %h4.pull-right $94.99
-                    %h4
-                      %a{:href => "#"} Fifth Product
-                    %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  .ratings
-                    %p.pull-right 18 reviews
-                    %p
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star
-                      %span.glyphicon.glyphicon-star-empty
-            .col-sm-4.col-lg-4.col-md-4
-              %h4
-                %a{:href => "#"} Like this template?
-              %p
-                If you like this template, then check out
-                %a{:href => "http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/", :target => "_blank"} this tutorial
-                on how to build a working review system for your online store!
-              %a.btn.btn-primary{:href => "http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/", :target => "_blank"} View Tutorial
 
     %div.flash
       -flash.each do |message_type, message|
@@ -197,7 +77,7 @@
     %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", :integrity => "sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r", :rel => "stylesheet"}
     / Latest compiled and minified JavaScript
     %script{:crossorigin => "anonymous", :integrity => "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"}
-    
+
     / jQuery
     %script{:src => "js/jquery.js"}
     / Bootstrap Core JavaScript
