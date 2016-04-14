@@ -17,6 +17,9 @@
         %h4
           = @product.title
         %p= @product.description
+        -@product.categories.each do |category|
+          = "Category: #{category.name}"
+          %br
 
   = link_to 'Edit Product   |', edit_product_path
 

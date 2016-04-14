@@ -26,6 +26,13 @@
       = f.label :quantity
       #exampleInputEmail1
         = f.text_field :quantity
+    .form-group
+      = f.label :categories
+      #exampleInputEmail1
+        = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
+          %div.collection-check-box
+            = b.check_box
+            = b.label
 
     %button.btn.btn-default
       = f.submit

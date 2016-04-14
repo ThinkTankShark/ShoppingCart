@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :user do
     username "MyString"
     email "MyString"
-    password_hash "MyString"
+    password_digest "MyString"
   end
   factory :category do
     name "MyString"
