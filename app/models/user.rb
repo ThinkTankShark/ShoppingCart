@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   include BCrypt
   has_secure_password
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
   def password
     @password ||= Password.new(password_digest)
   end
@@ -12,7 +15,5 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.password_digest = @password
   end
-
-
 
 end

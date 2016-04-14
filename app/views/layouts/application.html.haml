@@ -28,12 +28,18 @@
           %ul.nav.navbar-nav
             %li
               %a{:href => "/products"} View All Products
+
+          - if user_signed_in?
+            %li
+              = link_to('Logout', logout_path, :method => :delete)
+          - else
+            %li
+              = link_to('Login', new_user_path)
+
             %li
               %a{:href => "/admin"} Admin Login
         / /.navbar-collapse
       / /.container
-
-
 
     = yield
 
