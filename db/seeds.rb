@@ -1,5 +1,5 @@
-User.create(username: "tom", email: "tom@tom.com", password: "tomtom")
-User.create(username: "tim", email: "tim@tim.com", password: "timtim")
+User.create(name: "tom", email: "tom@tom.com", password: "tomtom")
+User.create(name: "tim", email: "tim@tim.com", password: "timtim")
 
 
 

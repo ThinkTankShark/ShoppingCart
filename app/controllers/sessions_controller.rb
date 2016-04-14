@@ -1,18 +1,14 @@
-class SessionsController < ApplicationController
+class Users::SessionsController < Devise::SessionsController
   def new
+  	super
   end
 
   def create
-    user = User.find_by(username: params[:session][:username])
-    if user && user.authenticate(params[:session][:password])
-      session[:id] = user.id
-      redirect_to "/products"
-    else
-      render 'new'
-    end
+  	super
   end
 
   def destroy
+  	super
   end
 
 end

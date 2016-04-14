@@ -18,21 +18,19 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to '/products'
-    else
-      render 'new'
-    end
+    # @user = User.new(user_params)
+    # if @user.save
+    #   redirect_to '/products'
+    # else
+    #   render 'new'
+    # end
   end
 
   def update
     @users = User.find(params[:id])
     if @users.update(user_params)
-      flash[:success] = "Congrats! You've edited an item!"
       redirect_to @users
     else
-      flash[:danger] = "Editing item failed."
       render 'edit'
     end
   end
