@@ -2,7 +2,12 @@
   %br
   %br
   %br
-    %p#view_all View All Products
+    %p View All Products
+
+%div
+  - @categories.each do |category|
+    = link_to "#{category.name}", category_path(category)
+    %br
 
 .row
   - @products.each do |product|
