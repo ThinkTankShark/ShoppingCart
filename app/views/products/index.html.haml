@@ -25,6 +25,9 @@
             %h4
               = link_to product.title, product_path(product)
             %p= "#{product.description[0..30]}..."
+            %form{:action => sessions_shop_path, :method => "post"}
+              %input{:name => "product_id", :type => "hidden", :value => "#{product.id}"}
+              %p= button_to 'Add To Cart'
 
 
 

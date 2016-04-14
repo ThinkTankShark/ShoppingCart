@@ -17,4 +17,20 @@ class SessionsController < ApplicationController
     redirect_to products_path
   end
 
+  def shop
+    @product = Product.find(params[:product_id])
+    p @product.title
+    if !session[:cart]
+      session[:cart] = {}
+    end
+    if session[:cart][@product.id.to_s]
+        session[:cart][@product.id.to_s] += 1
+        p session[:cart]
+    else
+        session[:cart][@product.id.to_s] = 1
+        p session[:cart]
+    end
+    redirect_to '/'
+  end
+
 end
