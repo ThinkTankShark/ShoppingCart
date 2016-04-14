@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'pg'
 gem 'bcrypt'
-
+gem 'figaro'
 gem 'uglifier'
 gem 'thin'
 
