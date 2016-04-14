@@ -1,11 +1,14 @@
 require 'rails_helper'
 
+
 RSpec.feature "Products", js: true do
+
+
   let(:new_product) { FactoryGirl.create(:product) }
   context 'a guest user' do
     it 'can see the page title on home page' do
       visit root_path
-      expect(page).to have_content("Welcome, Client!")
+      expect(page).to have_content("Rails Shoppe")
     end
   end
 

@@ -2,13 +2,9 @@ require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller do
 
-
-
-
   before do
-      http_login
+    http_login
   end
-
 
   describe "#index" do
 
@@ -52,7 +48,7 @@ RSpec.describe ProductsController, type: :controller do
   describe "#update" do
     let!(:old_product) { FactoryGirl.create(:product) }
     context 'on valid params' do
-      let(:params) {{product: {title: old_product.title, description: "new description", price: old_product.price, id: old_product.id}}}
+      let(:params) {{product: {title: old_product.title, description: "new description", price: old_product.price}, id: old_product.id}}
       it 'responds with a status of 302' do
         patch :update, params
       expect(response.status).to eq(302)

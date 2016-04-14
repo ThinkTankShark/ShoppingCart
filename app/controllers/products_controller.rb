@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "secret", except: [:index, :show]
+  # http_basic_authenticate_with name: "admin", password: "secret", except: [:index, :show]
 
   def index
     @products = Product.all
@@ -31,8 +31,10 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
+      flash[:success] = "Congrats! You've edited an item!"
       redirect_to @product
     else
+      flash[:danger] = "Editing item failed."
       render 'edit'
     end
   end
