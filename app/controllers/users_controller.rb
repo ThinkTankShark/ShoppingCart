@@ -31,21 +31,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @users = User.find(params[:id])
-    if @users.update(user_params)
-      flash[:success] = "Congrats! You've edited an item!"
-      redirect_to @users
-    else
-      flash[:danger] = "Editing item failed."
-      render 'edit'
-    end
+
   end
 
   def destroy
-    @users = User.find(params[:id])
-    @users.destroy
 
-    redirect_to users_path
   end
 
   private
