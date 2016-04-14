@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      = "Welcome to Ye Olde Rails Shoppe, #{@user.username}!"
+    %p
+      You have successfully signed up.
+    %p
+      = "To login to the site, just follow this link: #{@url}."
+    %p Thanks for joining and have a great day!
