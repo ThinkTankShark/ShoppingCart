@@ -1,0 +1,18 @@
+%br
+%br
+%br
+%br
+%div.form-style
+  = form_for(:session, url: login_path) do |f|
+
+    .form-group
+      = f.label :username
+      #exampleInputEmail1
+        = f.text_field :username
+    .form-group
+      = f.label :password
+      #exampleInputEmail1
+        = f.password_field :password
+
+    %button.btn.btn-default
+      = f.submit

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'pg'
+gem 'bcrypt'
 
 gem 'uglifier'
 gem 'thin'
