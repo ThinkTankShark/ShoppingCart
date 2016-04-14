@@ -2,6 +2,8 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   include BCrypt
+  has_many :orders
+
   has_secure_password
 
   def password
