@@ -1,0 +1,18 @@
+%br
+%br
+%br
+%br
+= @category.name
+%br
+%br
+%div
+  - @category.products.all.each do |product|
+    .col-sm-4.col-lg-4.col-md-4
+      .thumbnail
+        %img{:src => "#{product.img_url}"}
+          .caption
+            %h4.pull-right= number_to_currency(product.price)
+            %h4
+              = link_to product.title, product_path(product)
+            %p= "#{product.description[0..30]}..."
+
