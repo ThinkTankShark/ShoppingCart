@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:id] = nil
+    redirect_to products_path
   end
 
 end

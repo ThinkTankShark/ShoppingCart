@@ -27,9 +27,18 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => "/products"} View All Products
+              = link_to 'View All Products', products_path
+            -if session[:id] == nil
+              %li
+                = link_to 'Create Account', new_user_path
+              %li
+                = link_to 'Login', login_path
+              %li
+            -else
+              %li
+                = link_to 'Logout', logout_path, :method => :delete
             %li
-              %a{:href => "/admin"} Admin Login
+              = link_to 'Admin Dashboard', admin_path
         / /.navbar-collapse
       / /.container
 

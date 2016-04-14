@@ -1,3 +1,9 @@
+%div.flash
+  -flash.each do |message_type, message|
+    %br
+    %br
+    %div.alert{ :class => "alert-#{message_type}"}
+      =message
 %h3
   %br
   %br
@@ -13,7 +19,7 @@
   - @products.each do |product|
     .col-sm-4.col-lg-4.col-md-4
       .thumbnail
-        %img{:src => "#{product.img_url}"}
+        %img.product_img{:src => "#{product.img_url}"}
           .caption
             %h4.pull-right= number_to_currency(product.price)
             %h4
