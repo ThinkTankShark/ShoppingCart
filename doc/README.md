@@ -8,7 +8,7 @@
 
 ## Schema screenshot
 
--![Schema](./schema.png)
+-![Schema](./fourth_gen_schema.png)
 
 ## Installation Notes
 

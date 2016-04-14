@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :purchases
   root :to => 'products#index'
 
   get 'admin' => 'admin#dashboard'

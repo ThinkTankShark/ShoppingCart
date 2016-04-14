@@ -1,0 +1,11 @@
+.col-md-3
+  .list-group
+    - if @product || @category
+      =link_to "All Categories", products_path, class: "list-group-item"
+    - else
+      =link_to "All Categories", products_path, class: "list-group-item active"
+    - @categories.each do |cat|
+      =link_to "#{cat.name}", category_path(cat), class: "list-group-item"
+    %br
+    - if !@product || @category
+      =button_to "New", new_product_path, method: :get

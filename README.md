@@ -2,12 +2,19 @@
 ___
 * Upon authentication, the admin can add, edit, delete and view a product from the store, which includes inventory level.
 
-* A shopper can navigate to the site from each page.
+* A shopper can:
+* select items and add them to cart
+* items available reflect current inventory levels
+* total price reflected in cart
+* out of inventory items grayed out in cart
+* inventory updated after an item is purchased
+* receives confirmation email after purchases with summary
+* has a user profile with order history sorted by date and time
 
 
 ## Schema Screenshot:
 
-![schema](db/schema1.png)
+![schema](doc/fourth_gen_schema.png)
 
 ## Installation Notes:
 * ruby 2.0.0p353
