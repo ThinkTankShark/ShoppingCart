@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :order do
+    
+  end
   factory :user do
     username "MyString"
     email "MyString"
