@@ -35,6 +35,19 @@ class SessionsController < ApplicationController
       @num_in_cart += qty
     end
 
+    def remove_item
+      id = params[:id]
+      p "++++++++++++++++++++++++++++++++"
+      p id
+      session[:cart][id] -= 1
+      if request.xhr?
+        data = {id: id, qty: session[:cart][id]}
+        render :json => data, :status => :ok
+      else
+        render '_cart'
+      end
+    end
+
     def view_cart
       @cart = session[:cart]
       render "_cart"

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/sessions/view_cart'
 
+  get '/sessions/remove_item'
+
   root :to => 'products#index'
 
   get 'admin' => 'admin#dashboard'

@@ -26,7 +26,10 @@
             %p= "#{product.description[0..30]}..."
             = form_for(:session, url: sessions_shop_path, remote: true, html: { class: "add-to-cart" }) do |f|
               %input{:name => "product_id", :type => "hidden", :value => "#{product.id}"}
-              %p= button_to 'Add To Cart'
+              - if product.quantity > 0
+                %p= button_to 'Add To Cart'
+              - else
+                %p SOLD OUT
 
 
 
