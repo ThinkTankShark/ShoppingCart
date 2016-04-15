@@ -4,7 +4,7 @@
     %br
     %br
     %div.alert{ :class => "alert-#{message_type}"}
-      =message
+      = message
 
 .row
   - @products.each do |product|
@@ -12,10 +12,12 @@
       .thumbnail
         %img.product_img{:src => "#{product.img_url}"}
         .caption
-          %h4.pull-right= number_to_currency(product.price)
+          %h4.pull-right
+            = number_to_currency(product.price)
           %h4
             = link_to product.title, product_path(product)
-          %p= "#{product.description[0..30]}..."
+          %p
+            = "#{product.description[0..30]}..."
 
 
 
