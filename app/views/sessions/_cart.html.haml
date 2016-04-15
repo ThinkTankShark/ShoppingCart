@@ -1,0 +1,23 @@
+%h3 Shopping Cart
+.table-responsive
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Item
+        %th Quantity
+        %th Total Price
+
+      %tbody
+        - @cart.each do |id, qty|
+          - product = Product.find(id)
+          %tr
+            %td= product.title
+            %td= qty
+            %td= product.price * qty
+
+      %tfoot
+        %tr
+          %td
+          %td Subtotal:
+          %td= @subtotal
+
