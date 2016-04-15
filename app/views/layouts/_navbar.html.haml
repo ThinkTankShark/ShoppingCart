@@ -27,6 +27,9 @@
           %li
             = link_to 'Admin Dashboard', admin_path
           %li
-            = link_to 'Cart', purchases_path
+            = link_to "Cart", purchases_path
+          %li#cart-num
+            = session[:purchase].length if session[:purchase]
+
 
     / /.navbar-collapse
