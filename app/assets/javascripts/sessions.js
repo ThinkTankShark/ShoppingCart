@@ -9,7 +9,11 @@ $(document).ready(function() {
   $( '.remove_item' ).on('ajax:success', function(event, response) {
     var id = response.id;
     var qty = response.qty;
+    var price = Number($( 'tr#' + id + ' td:nth-child(3)').text()) - response.price;
+    var subtotal = Number(($('#subtotal').text())) - response.price;
     $( 'tr#' + id + ' td:nth-child(2)').text(qty);
+    $( 'tr#' + id + ' td:nth-child(3)').text(price);
+    $( '#subtotal' ).text(subtotal);
   });
 
 });
