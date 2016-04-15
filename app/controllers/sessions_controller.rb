@@ -35,6 +35,11 @@ class SessionsController < ApplicationController
       @num_in_cart += qty
     end
 
+    def view_cart
+      @cart = session[:cart]
+      render "_cart"
+    end
+
     if request.xhr?
       render '_subtotal', layout: false
     else
