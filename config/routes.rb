@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   post 'sessions/shop'
 
+  get '/sessions/view_cart'
+
   root :to => 'products#index'
 
   get 'admin' => 'admin#dashboard'
