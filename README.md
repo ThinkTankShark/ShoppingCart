@@ -14,7 +14,7 @@ ___
 
 ## Schema Screenshot:
 
-![schema](doc/fourth_gen_schema.png)
+![schema](doc/schema.png)
 
 ## Installation Notes:
 * ruby 2.0.0p353
