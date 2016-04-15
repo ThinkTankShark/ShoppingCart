@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
   $('.add-to-cart').on('ajax:success', function(event, response) {
+    $('.shopping-cart:last').remove();
     $( '#category-title' ).prepend(response);
 
   })

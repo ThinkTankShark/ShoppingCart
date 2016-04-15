@@ -9,7 +9,6 @@
   %br
   %br
     %p#header-left View All Products
-
 %div#category-title
   - @categories.each do |category|
     %div= link_to "#{category.name}", category_path(category)
