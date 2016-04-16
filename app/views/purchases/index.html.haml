@@ -1,28 +1,9 @@
-.row
-  .col-sm-4.col-lg-4.col-md-4
-    .thumbnail
-      - if session[:purchase]
-        - total = 0
-        - session[:purchase].each_pair do |key, value|
-          - item = Product.find(key)
-          - subtotal = item.price.to_f * value.to_f
-          - total += subtotal
-          %img.product_img{src: "#{item.img_url}"}
-          .caption
-            %h4.pull-right
-              = number_to_currency(item.price)
-            %h4
-              = link_to item.title, product_path(key)
-            %p
-              = "#{item.description[0..30]}..."
-            %p
-              = "Quantity: #{value}"
-              %br
-              = "Subtotal: #{number_to_currency(subtotal)}"
-%h3
-  = "Total: #{number_to_currency(total)}"
-
-  = button_to "Checkout", checkout_path
-
+- @purchases.each do |purchase|
+  - purchase.products_purchases.each do |p|
+    = "#{p.quantity} x #{purchase.products.find(p.product_id).title}"
+    %br
+  = number_to_currency(purchase.total_cost)
+  %br
+  %br
 
 
