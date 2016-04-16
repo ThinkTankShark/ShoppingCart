@@ -27,9 +27,15 @@
           %li
             = link_to 'Admin Dashboard', admin_path
           %li
-            = link_to "Cart", purchases_path
-          %li#cart-num
-            = session[:purchase].length if session[:purchase]
+            = link_to 'Purchase History', purchases_path
 
+            %li
+              = link_to "Cart", new_purchase_path
+            %li#cart-num
+              = session[:purchase].length if session[:purchase] && session[:purchase].length > 0
+%div.flash
+  -flash.each do |message_type, message|
+    %div.alert{ :class => "alert-#{message_type}"}
+      = message
 
     / /.navbar-collapse
