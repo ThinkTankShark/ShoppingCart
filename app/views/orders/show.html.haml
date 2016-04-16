@@ -1,2 +1,35 @@
-%h1 Orders#show
-%p Find me in app/views/orders/show.html.haml
+%br
+%br
+%br
+%h3 Thank you for shopping at Ye Olde Rails Shoppe!
+%h5 Review Your Order
+- items = @order.orders_products
+
+.table-responsive
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Item
+        %th Quantity
+        %th Total Price
+        %th
+
+      %tbody
+        - subtotal = 0
+        - items.each do |item|
+          - product = Product.find(item.product_id)
+          - subtotal += item.quantity * product.price
+          %tr
+            %td= product.title
+            %td= item.quantity
+            %td= product.price * item.quantity
+
+
+      %tfoot
+        %tr
+          %td
+          %td Subtotal:
+          %td#subtotal= subtotal
+
+
+

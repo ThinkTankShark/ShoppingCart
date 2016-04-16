@@ -22,18 +22,31 @@ class SessionsController < ApplicationController
     if !session[:cart]
       session[:cart] = {}
     end
-    if session[:cart][@product.id.to_s]
-      session[:cart][@product.id.to_s] += 1
+    if !session[:stock]
+      session[:stock] = @product.quantity - 1
+    end
+    if session[:stock] > 0
+      if session[:cart][@product.id.to_s]
+        session[:cart][@product.id.to_s] += 1
+        session[:stock] -= 1
+        p @product.id
+        p session[:stock]
+      else
+        session[:cart][@product.id.to_s] = 1
+      end
+      @cart = session[:cart]
+      @subtotal = 0
+      @num_in_cart = 0
+      @cart.each do |id, qty|
+        @subtotal += (Product.find(id).price * qty)
+        @num_in_cart += qty
+      end
+      render '_subtotal', layout: false
     else
-      session[:cart][@product.id.to_s] = 1
+      flash[:danger] = "This item is currently out of stock."
+      redirect_to '/'
     end
-    @cart = session[:cart]
-    @subtotal = 0
-    @num_in_cart = 0
-    @cart.each do |id, qty|
-      @subtotal += (Product.find(id).price * qty)
-      @num_in_cart += qty
-    end
+  end
 
     def remove_item
       id = params[:id]
@@ -49,14 +62,12 @@ class SessionsController < ApplicationController
 
     def view_cart
       @cart = session[:cart]
-      render "_cart"
+      if request.xhr?
+        render '_subtotal', layout: false
+      else
+        render '_cart'
+      end
     end
 
-    if request.xhr?
-      render '_subtotal', layout: false
-    else
-      render '_cart'
-    end
-  end
 
 end

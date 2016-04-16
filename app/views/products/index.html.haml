@@ -15,7 +15,7 @@
     %br
 
 .row
-  - @products.each do |product|
+  - @products.order(:id).each do |product|
     .col-sm-4.col-lg-4.col-md-4
       .thumbnail
         %img.product_img{:src => "#{product.img_url}"}
