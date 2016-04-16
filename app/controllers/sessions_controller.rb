@@ -48,8 +48,10 @@ class SessionsController < ApplicationController
       end
       render '_subtotal', layout: false
     else
+      @products = Product.all
+      @categories = Category.all
       flash[:danger] = "This item is currently out of stock."
-      render 'products/index'
+      render '/products/index'
     end
   end
 
