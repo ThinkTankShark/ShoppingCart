@@ -1,4 +1,5 @@
 - if @cart
+  -@subtotal = session[:subtotal]
   %h3 Shopping Cart
   .table-responsive
     %table.table.table-striped
@@ -7,20 +8,23 @@
           %th Item
           %th Quantity
           %th Total Price
-
+          %th
 
         %tbody
           - @cart.each do |id, qty|
             - product = Product.find(id)
-            %tr
+            %tr{ id: "#{id}"}
               %td= product.title
               %td= qty
               %td= product.price * qty
+              %td= link_to 'Remove Item', sessions_remove_item_path(:id => id), class: "remove_item", remote: true
 
         %tfoot
           %tr
             %td
             %td Subtotal:
-            %td= @subtotal
+            %td#subtotal= (@subtotal)
+
+  = button_to 'Confirm Checkout', orders_create_path
 
 

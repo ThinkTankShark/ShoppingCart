@@ -15,7 +15,7 @@
     %br
 
 .row
-  - @products.each do |product|
+  - @products.order(:id).each do |product|
     .col-sm-4.col-lg-4.col-md-4
       .thumbnail
         %img.product_img{:src => "#{product.img_url}"}
@@ -26,7 +26,10 @@
             %p= "#{product.description[0..30]}..."
             = form_for(:session, url: sessions_shop_path, remote: true, html: { class: "add-to-cart" }) do |f|
               %input{:name => "product_id", :type => "hidden", :value => "#{product.id}"}
-              %p= button_to 'Add To Cart'
+              - if product.quantity > 0
+                %p= button_to 'Add To Cart'
+              - else
+                %p SOLD OUT
 
 
 

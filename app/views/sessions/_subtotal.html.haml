@@ -3,5 +3,6 @@
   %p
     = "Cart subtotal (#{@num_in_cart} items): #{number_to_currency(@subtotal)}"
     %p
-      = link_to 'View Full Cart', 'sessions/view_cart'
-      = button_to 'Checkout'
+      - session[:subtotal] = @subtotal
+      = link_to 'Proceed to Checkout', sessions_view_cart_path
+
