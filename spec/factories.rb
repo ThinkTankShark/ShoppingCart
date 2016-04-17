@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :purchase do
-    
+     user_id ([1..100].sample)
+     total_cost number_to_currency([1..1000].sample)
   end
   factory :user do
     username "MyString"
@@ -18,3 +19,4 @@ FactoryGirl.define do
     quantity ([1..1000].sample)
   end
 end
+
