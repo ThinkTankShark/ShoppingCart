@@ -20,6 +20,12 @@
         -@product.categories.each do |category|
           = "Category: #{category.name}"
           %br
+        = form_for(:session, url: sessions_shop_path, remote: true, html: { class: "add-to-cart" }) do |f|
+          %input{:name => "product_id", :type => "hidden", :value => "#{@product.id}"}
+          - if @product.quantity > 0
+            %p= button_to 'Add To Cart'
+          - else
+            %p SOLD OUT
 
   = link_to 'Edit Product   |', edit_product_path
 

@@ -16,14 +16,14 @@
             %tr{ id: "#{id}"}
               %td= product.title
               %td= qty
-              %td= product.price * qty
+              %td= number_to_currency(product.price * qty)
               %td= link_to 'Remove Item', sessions_remove_item_path(:id => id), class: "remove_item", remote: true
 
         %tfoot
           %tr
             %td
             %td Subtotal:
-            %td#subtotal= (@subtotal)
+            %td#subtotal= (number_to_currency(@subtotal))
 
   = button_to 'Confirm Checkout', orders_create_path
 

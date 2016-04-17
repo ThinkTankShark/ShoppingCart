@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
 
   def shop
     @products = Product.all
+    @categories = Category.all
     @product = Product.find(params[:product_id])
     product_id = @product.id.to_s
     if !session[:cart]
@@ -37,21 +38,21 @@ class SessionsController < ApplicationController
         session[:cart][product_id] += 1
       end
       session[:stock][product_id] -= 1
-      p session[:cart][product_id]
-      p session[:stock][product_id]
-      @cart = session[:cart]
-      @subtotal = 0
-      @num_in_cart = 0
-      @cart.each do |id, qty|
-        @subtotal += (Product.find(id).price * qty)
-        @num_in_cart += qty
-      end
+    else
+      p "outta stock"
+      flash[:danger] = "Sorry, that item is currently out of stock"
+    end
+    @cart = session[:cart]
+    @subtotal = 0
+    @num_in_cart = 0
+    @cart.each do |id, qty|
+      @subtotal += (Product.find(id).price * qty)
+      @num_in_cart += qty
+    end
+    if request.xhr?
       render '_subtotal', layout: false
     else
-      @products = Product.all
-      @categories = Category.all
-      flash[:danger] = "This item is currently out of stock."
-      render '/products/index'
+      redirect_to products_path
     end
   end
 
