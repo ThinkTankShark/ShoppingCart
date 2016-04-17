@@ -9,6 +9,13 @@
   %br
   %br
     %p#header-left View All Products
+-if session[:id] != nil
+  -@user = User.find(session[:id])
+  %h4
+    = link_to "Your Order History", "/users/#{@user.id}"
+  %br
+
+
 %div#category-title
   - @categories.each do |category|
     %div= link_to "#{category.name}", category_path(category)
