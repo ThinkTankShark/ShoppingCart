@@ -26,7 +26,7 @@ RSpec.feature "Products", js: true do
     end
   end
 
-  describe 'editing an existing prodzx uct' zxxzdo
+  describe 'editing an existing product' do
     it 'can fill out the form of the product page and see updated result' do
       visit edit_product_path(new_product.id)
       title = "edit title"

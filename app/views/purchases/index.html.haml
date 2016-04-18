@@ -1,9 +1,0 @@
-- @purchases.each do |purchase|
-  - purchase.products_purchases.each do |p|
-    = "#{p.quantity} x #{purchase.products.find(p.product_id).title}"
-    %br
-  = number_to_currency(purchase.total_cost)
-  %br
-  %br
-
-
