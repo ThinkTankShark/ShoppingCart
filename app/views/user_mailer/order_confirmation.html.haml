@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      = "Welcome to Ye Olde Rails Shoppe, #{@user.username}!"
+    %p
+      A new order has been placed:
+      = @order.name
+    %p
+      = "To login to the site, just follow this link: #{@url}."
+    %p Thanks for shopping and have a great day!
