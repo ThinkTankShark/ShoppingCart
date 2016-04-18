@@ -1,6 +1,7 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  has_many :purchases
   include BCrypt
   has_secure_password
 

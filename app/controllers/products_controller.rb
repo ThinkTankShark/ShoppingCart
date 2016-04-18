@@ -7,18 +7,22 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @categories = Category.all
     @product = Product.find(params[:id])
   end
 
   def new
+    @categories = Category.all
     @product = Product.new
   end
 
   def edit
+    @categories = Category.all
     @product = Product.find(params[:id])
   end
 
   def create
+    @categories = Category.all
     @product = Product.new(product_params)
     admin = User.find_by(username: 'tim')
     if session[:id] == admin.id
@@ -36,6 +40,7 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @categories = Category.all
     @product = Product.find(params[:id])
     admin = User.find_by(username: 'tim')
     if session[:id] == admin.id
