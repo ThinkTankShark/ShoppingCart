@@ -10,8 +10,9 @@ class OrdersController < ApplicationController
       product = Product.find(id)
       @order.orders_products << OrdersProduct.create(order_id: @order.id, 
         product_id: id, quantity: qty)
-
+      
       product.update(quantity: (product.quantity - qty))
+      UserMailer.order_confirmation(@order.orders_products).deliver
     end
     
     session.clear
