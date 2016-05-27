@@ -6,4 +6,9 @@ class UserMailer < ApplicationMailer
     @url = 'https://floating-ridge-94894.herokuapp.com'
     mail(to: @user.email, subject: 'Join My Cult...')
   end
+
+  def order_confirmation(order)
+  	@order = order
+  	mail to: @user.email, subject: "Your Order Has Been Placed Successfully!"
+  end
 end

@@ -5,7 +5,7 @@ class AdminController < ApplicationController
     @categories = Category.all
     admin = User.find_by(username: 'tim')
     if session[:id] != admin.id
-      flash[:danger] = "Sorry, only administrators can access this page."
+      flash.now[:danger] = "Sorry, only administrators can access this page."
       render template: "products/index"
     end
   end
