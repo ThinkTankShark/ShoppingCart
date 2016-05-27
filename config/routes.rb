@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'orders/show'
+
+  post 'orders/create'
+
+  post 'sessions/shop'
+
+  get '/sessions/view_cart'
+
+  get '/sessions/remove_item'
+
   root :to => 'products#index'
 
   get 'admin' => 'admin#dashboard'

@@ -1,0 +1,12 @@
+- @user = User.find(session[:id])
+%br
+%br
+%br
+%h3 Thank you for shopping at Ye Olde Rails Shoppe!
+%h5 Review Your Order
+= render partial: 'show_partial', layout: false, locals: {order: @order}
+%br
+%br
+= link_to "Your Order History", "/users/#{@user.id}"
+
+

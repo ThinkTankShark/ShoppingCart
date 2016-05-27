@@ -1,0 +1,12 @@
+- @user = User.find(params[:id])
+%br
+%br
+%br
+%h3= "Order History For #{@user.username.capitalize}"
+%br
+
+- @user.orders.each do |order|
+  %h5= "Order placed at #{order.created_at}"
+  = render partial: 'orders/show_partial', layout: false, locals: {order: order}
+
+= link_to "Generate PDF of Order History", "/users/#{@user.id}.pdf", target: "_blank"

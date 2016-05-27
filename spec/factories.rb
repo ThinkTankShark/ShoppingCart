@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :orders_product do
+    
+  end
+  factory :order do
+    
+  end
   factory :user do
     username "MyString"
     email "MyString"

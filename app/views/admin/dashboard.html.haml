@@ -46,7 +46,7 @@
               %th Delete
 
             %tbody
-              - @products.each do |product|
+              - @products.order(:id).each do |product|
                 %tr
                   %td= product.id
                   %td= link_to product.title, product_path(product.id)

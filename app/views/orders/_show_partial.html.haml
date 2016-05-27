@@ -1,0 +1,27 @@
+- items = order.orders_products
+
+.table-responsive
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Item
+        %th Quantity
+        %th Total Price
+        %th
+
+      %tbody
+        - subtotal = 0
+        - items.each do |item|
+          - product = Product.find(item.product_id)
+          - subtotal += item.quantity * product.price
+          %tr
+            %td= product.title
+            %td= item.quantity
+            %td= number_to_currency(product.price * item.quantity)
+
+
+      %tfoot
+        %tr
+          %td
+          %td Subtotal:
+          %td#subtotal= number_to_currency(subtotal)
