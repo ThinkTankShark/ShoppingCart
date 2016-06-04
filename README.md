@@ -12,9 +12,13 @@ ___
 
 
 
-## Schema Screenshot:
+## Schema:
 
 ![schema](db/final_schema.png)
+
+## Homepage:
+
+![homepage](app/assets/images/homepage.png)
 
 ## Installation Notes:
 * ruby 2.0.0p353
