@@ -16,9 +16,16 @@ ___
 
 ![schema](db/final_schema.png)
 
-## Homepage:
+## Website:
 
+#### Homepage:
 ![homepage](app/assets/images/homepage.png)
+
+#### Admin Dashboard:
+![admin](app/assets/images/admin.png)
+
+#### Shopping Cart:
+![shopping](app/assets/images/shopping.png)
 
 ## Installation Notes:
 * ruby 2.0.0p353
