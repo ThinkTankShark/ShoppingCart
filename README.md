@@ -18,13 +18,19 @@ ___
 
 ## Website:
 
+#### Welcome Page:
+![welcome](app/assets/images/main page.png)
+
 #### Homepage:
+
 ![homepage](app/assets/images/homepage.png)
 
 #### Admin Dashboard:
+
 ![admin](app/assets/images/admin.png)
 
 #### Shopping Cart:
+
 ![shopping](app/assets/images/shopping.png)
 
 ## Installation Notes:
